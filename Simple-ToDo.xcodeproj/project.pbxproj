@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		FC073C102C85FCA000D68740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073C0F2C85FCA000D68740 /* AppDelegate.swift */; };
 		FC073C122C85FCA000D68740 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073C112C85FCA000D68740 /* SceneDelegate.swift */; };
-		FC073C142C85FCA000D68740 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073C132C85FCA000D68740 /* ViewController.swift */; };
-		FC073C172C85FCA000D68740 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FC073C162C85FCA000D68740 /* Base */; };
+		FC073C142C85FCA000D68740 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073C132C85FCA000D68740 /* ToDoListViewController.swift */; };
 		FC073C192C85FCA200D68740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC073C182C85FCA200D68740 /* Assets.xcassets */; };
 		FC073C1C2C85FCA200D68740 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FC073C1B2C85FCA200D68740 /* Base */; };
+		FC073C292C86009700D68740 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073C282C86009700D68740 /* BaseViewController.swift */; };
+		FC073C2C2C8600B200D68740 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FC073C2B2C8600B200D68740 /* SnapKit */; };
+		FC073C312C861B5600D68740 /* ToDoListViewControllerConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073C302C861B5600D68740 /* ToDoListViewControllerConfigure.swift */; };
+		FC073CBF2C8DCA3C00D68740 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CBE2C8DCA3C00D68740 /* ToDoTableViewCell.swift */; };
+		FC073CC12C8DD08400D68740 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CC02C8DD08400D68740 /* ToDoList.swift */; };
+		FC073CC32C8DD0F600D68740 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CC22C8DD0F600D68740 /* ToDoItem.swift */; };
+		FC073CC52C8DD13100D68740 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CC42C8DD13100D68740 /* Category.swift */; };
+		FC073CC92C8ED63200D68740 /* ToDoMakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CC82C8ED63200D68740 /* ToDoMakerView.swift */; };
+		FC073CCB2C8EE35A00D68740 /* ToDoListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CCA2C8EE35A00D68740 /* ToDoListState.swift */; };
+		FC073CCE2C9068FD00D68740 /* KeyDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CCD2C9068FD00D68740 /* KeyDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FC073C0C2C85FCA000D68740 /* Simple-ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple-ToDo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC073C0F2C85FCA000D68740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC073C112C85FCA000D68740 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC073C132C85FCA000D68740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FC073C162C85FCA000D68740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FC073C132C85FCA000D68740 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		FC073C182C85FCA200D68740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC073C1B2C85FCA200D68740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC073C1D2C85FCA200D68740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC073C282C86009700D68740 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FC073C302C861B5600D68740 /* ToDoListViewControllerConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerConfigure.swift; sourceTree = "<group>"; };
+		FC073CBE2C8DCA3C00D68740 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		FC073CC02C8DD08400D68740 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
+		FC073CC22C8DD0F600D68740 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		FC073CC42C8DD13100D68740 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FC073CC82C8ED63200D68740 /* ToDoMakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoMakerView.swift; sourceTree = "<group>"; };
+		FC073CCA2C8EE35A00D68740 /* ToDoListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListState.swift; sourceTree = "<group>"; };
+		FC073CCD2C9068FD00D68740 /* KeyDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDefaults.swift; sourceTree = "<group>"; };
+		FC073CCF2C907A6B00D68740 /* Simple-ToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Simple-ToDo.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC073C2C2C8600B200D68740 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +75,80 @@
 		FC073C0E2C85FCA000D68740 /* Simple-ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				FC073C0F2C85FCA000D68740 /* AppDelegate.swift */,
-				FC073C112C85FCA000D68740 /* SceneDelegate.swift */,
-				FC073C132C85FCA000D68740 /* ViewController.swift */,
-				FC073C152C85FCA000D68740 /* Main.storyboard */,
-				FC073C182C85FCA200D68740 /* Assets.xcassets */,
-				FC073C1A2C85FCA200D68740 /* LaunchScreen.storyboard */,
-				FC073C1D2C85FCA200D68740 /* Info.plist */,
+				FC073CCF2C907A6B00D68740 /* Simple-ToDo.entitlements */,
+				FC073C232C85FFA900D68740 /* App */,
+				FC073CCC2C90676200D68740 /* Structures */,
+				FC073C242C86001000D68740 /* Views */,
+				FC073C272C86003500D68740 /* Resourses */,
 			);
 			path = "Simple-ToDo";
+			sourceTree = "<group>";
+		};
+		FC073C232C85FFA900D68740 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FC073C0F2C85FCA000D68740 /* AppDelegate.swift */,
+				FC073C112C85FCA000D68740 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FC073C242C86001000D68740 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC073C252C86001600D68740 /* Components */,
+				FC073C262C86001B00D68740 /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC073C252C86001600D68740 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FC073C282C86009700D68740 /* BaseViewController.swift */,
+				FC073CBE2C8DCA3C00D68740 /* ToDoTableViewCell.swift */,
+				FC073CC82C8ED63200D68740 /* ToDoMakerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FC073C262C86001B00D68740 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FC073C2F2C861B4400D68740 /* ToDoList */,
+				FC073C1A2C85FCA200D68740 /* LaunchScreen.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FC073C272C86003500D68740 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				FC073C182C85FCA200D68740 /* Assets.xcassets */,
+				FC073C1D2C85FCA200D68740 /* Info.plist */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		FC073C2F2C861B4400D68740 /* ToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				FC073C132C85FCA000D68740 /* ToDoListViewController.swift */,
+				FC073C302C861B5600D68740 /* ToDoListViewControllerConfigure.swift */,
+			);
+			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		FC073CCC2C90676200D68740 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				FC073CC42C8DD13100D68740 /* Category.swift */,
+				FC073CCA2C8EE35A00D68740 /* ToDoListState.swift */,
+				FC073CC02C8DD08400D68740 /* ToDoList.swift */,
+				FC073CC22C8DD0F600D68740 /* ToDoItem.swift */,
+				FC073CCD2C9068FD00D68740 /* KeyDefaults.swift */,
+			);
+			path = Structures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +167,9 @@
 			dependencies = (
 			);
 			name = "Simple-ToDo";
+			packageProductDependencies = (
+				FC073C2B2C8600B200D68740 /* SnapKit */,
+			);
 			productName = "Simple-ToDo";
 			productReference = FC073C0C2C85FCA000D68740 /* Simple-ToDo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +198,9 @@
 				Base,
 			);
 			mainGroup = FC073C032C85FCA000D68740;
+			packageReferences = (
+				FC073C2A2C8600B200D68740 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = FC073C0D2C85FCA000D68740 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +217,6 @@
 			files = (
 				FC073C192C85FCA200D68740 /* Assets.xcassets in Resources */,
 				FC073C1C2C85FCA200D68740 /* Base in Resources */,
-				FC073C172C85FCA000D68740 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +227,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC073C142C85FCA000D68740 /* ViewController.swift in Sources */,
+				FC073C142C85FCA000D68740 /* ToDoListViewController.swift in Sources */,
+				FC073CC12C8DD08400D68740 /* ToDoList.swift in Sources */,
+				FC073CCB2C8EE35A00D68740 /* ToDoListState.swift in Sources */,
+				FC073CC32C8DD0F600D68740 /* ToDoItem.swift in Sources */,
+				FC073C312C861B5600D68740 /* ToDoListViewControllerConfigure.swift in Sources */,
+				FC073CBF2C8DCA3C00D68740 /* ToDoTableViewCell.swift in Sources */,
+				FC073C292C86009700D68740 /* BaseViewController.swift in Sources */,
 				FC073C102C85FCA000D68740 /* AppDelegate.swift in Sources */,
+				FC073CC92C8ED63200D68740 /* ToDoMakerView.swift in Sources */,
+				FC073CCE2C9068FD00D68740 /* KeyDefaults.swift in Sources */,
 				FC073C122C85FCA000D68740 /* SceneDelegate.swift in Sources */,
+				FC073CC52C8DD13100D68740 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FC073C152C85FCA000D68740 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC073C162C85FCA000D68740 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC073C1A2C85FCA200D68740 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,14 +380,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Simple-ToDo/Simple-ToDo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BUF892U9LY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Simple-ToDo/Info.plist";
+				INFOPLIST_FILE = "Simple-ToDo/Resourses/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,14 +408,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Simple-ToDo/Simple-ToDo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BUF892U9LY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Simple-ToDo/Info.plist";
+				INFOPLIST_FILE = "Simple-ToDo/Resourses/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +453,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC073C2A2C8600B200D68740 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC073C2B2C8600B200D68740 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC073C2A2C8600B200D68740 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FC073C042C85FCA000D68740 /* Project object */;
 }
