@@ -1,15 +1,9 @@
-//
-//  ToDoListViewController.swift
-//  Simple-ToDo
-//
-//  Created by Богдан Тарченко on 02.09.2024.
-//
-
 import UIKit
 
 class ToDoListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     let defaults = UserDefaults.standard
+    let networkManager = NetworkManager()
     
     var header: UIImageView = {
         let image = UIImageView()
@@ -32,7 +26,6 @@ class ToDoListViewController: BaseViewController, UITableViewDelegate, UITableVi
     }()
     
     var toDoMakerView = ToDoMakerView()
-    
     let toDoTableView = UITableView()
     var toDoList = ToDoList(toDoList: [])
     
@@ -53,6 +46,7 @@ class ToDoListViewController: BaseViewController, UITableViewDelegate, UITableVi
         
         self.header.addSubview(importButton)
         self.configureImportButton()
+        
         self.header.addSubview(exportButton)
         self.configureExportButton()
         
@@ -103,48 +97,77 @@ extension ToDoListViewController {
     }
 }
 
-// MARK: - ToDoMakerViewDelegate Method
+// MARK: - ToDoMakerViewDelegate Methods
 extension ToDoListViewController: ToDoMakerViewDelegate {
     func didEditToDoItem(title: String, category: Category, at indexPath: IndexPath) {
-        toDoList.changeToDoItemTitle(index: indexPath.row, title: title)
-        toDoList.changeToDoItemCategory(index: indexPath.row, category: category)
-        toDoTableView.reloadData()
-        
-        saveToDoList()
+        let item = toDoList.toDoList[indexPath.row]
+        networkManager.editItem(id: item.id, text: title) { [weak self] result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self?.toDoList.changeToDoItemTitle(index: indexPath.row, title: title)
+                    self?.toDoList.changeToDoItemCategory(index: indexPath.row, category: category)
+                    self?.toDoTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     func didAddToDoItem(title: String, category: Category) {
-        let newToDoItem = ToDoItem(title: title, category: category, state: false)
-        toDoList.addToDoItem(item: newToDoItem)
-        toDoTableView.reloadData()
-        
-        saveToDoList()
+        networkManager.createItem(text: title) { [weak self] result in
+            switch result {
+            case .success(let response):
+                let newToDoItem = ToDoItem(id: response.id, title: title, category: category, state: false)
+                self?.toDoList.addToDoItem(item: newToDoItem)
+                DispatchQueue.main.async {
+                    self?.toDoTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
-// MARK: - ToDoTableViewCellDelegate Method
+// MARK: - ToDoTableViewCellDelegate Methods
 extension ToDoListViewController: ToDoTableViewCellDelegate {
     func didEditToDoItem(at indexPath: IndexPath) {
         let todoItem = toDoList.toDoList[indexPath.row]
         toDoMakerView.textField.text = todoItem.title
         toDoMakerView.state = .editingMode
         toDoMakerView.indexPath = indexPath
-        
-        saveToDoList()
     }
     
     func didDeleteToDoItem(at indexPath: IndexPath) {
-        toDoList.deleteToDoItem(index: indexPath.row)
-        toDoTableView.reloadData()
-        
-        saveToDoList()
+        let item = toDoList.toDoList[indexPath.row]
+        networkManager.deleteItem(id: item.id) { [weak self] result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self?.toDoList.deleteToDoItem(index: indexPath.row)
+                    self?.toDoTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     func didChangeStateToDoItem(at indexPath: IndexPath) {
-        toDoList.changeToDoItemState(index: indexPath.row)
-        toDoTableView.reloadData()
-        
-        saveToDoList()
+        let item = toDoList.toDoList[indexPath.row]
+        networkManager.updateItemState(id: item.id) { [weak self] result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self?.toDoList.changeToDoItemState(index: indexPath.row)
+                    self?.toDoTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
@@ -164,10 +187,18 @@ extension ToDoListViewController {
     }
     
     func loadToDoList() {
-        if let savedToDoListData = defaults.data(forKey: KeyDefaults.todoList) {
-            if let decodedToDoList = try? JSONDecoder().decode([ToDoItem].self, from: savedToDoListData) {
-                toDoList = ToDoList(toDoList: decodedToDoList)
-                print(toDoList.toDoList)
+        networkManager.getList { [weak self] result in
+            switch result {
+            case .success(let response):
+                let updatedItems = response.map { item in
+                    ToDoItem(id: item.id, title: item.text, category: .goal, state: item.state)
+                }
+                self?.toDoList = ToDoList(toDoList: updatedItems)
+                DispatchQueue.main.async {
+                    self?.toDoTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
             }
         }
     }
@@ -193,24 +224,43 @@ extension ToDoListViewController: UIDocumentPickerDelegate {
             let data = try Data(contentsOf: selectedFileURL)
             let toDoItems = try JSONDecoder().decode([ToDoItem].self, from: data)
             self.toDoList = ToDoList(toDoList: toDoItems)
-            self.toDoTableView.reloadData()
+            
+            for item in toDoItems {
+                networkManager.createItem(text: item.title) { [weak self] result in
+                    switch result {
+                    case .success(let response):
+                        let newToDoItem = ToDoItem(id: response.id, title: item.title, category: item.category, state: item.state)
+                        self?.toDoList.addToDoItem(item: newToDoItem)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.toDoTableView.reloadData()
+            }
         } catch {
             print(error)
         }
+        
+        selectedFileURL.stopAccessingSecurityScopedResource()
     }
     
+    
     @objc func exportButtonTapped() {
-        let fileManager = FileManager.default
-        let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
-        guard let documentDirectory = urls.first else { return }
-        let fileURL = documentDirectory.appendingPathComponent("todoList.json")
+        let fileName = "ToDoList.json"
+        let tempDir = FileManager.default.temporaryDirectory
+        let fileURL = tempDir.appendingPathComponent(fileName)
         
         do {
-            let data = try JSONEncoder().encode(self.toDoList.toDoList)
+            let data = try JSONEncoder().encode(toDoList.toDoList)
             try data.write(to: fileURL)
             
-            let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
-            present(activityViewController, animated: true, completion: nil)
+            let documentPicker = UIDocumentPickerViewController(forExporting: [fileURL])
+            documentPicker.delegate = self
+            documentPicker.allowsMultipleSelection = false
+            present(documentPicker, animated: true, completion: nil)
         } catch {
             print(error)
         }

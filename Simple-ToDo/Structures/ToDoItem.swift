@@ -5,17 +5,22 @@
 //  Created by Богдан Тарченко on 08.09.2024.
 //
 
+import Foundation
+
 protocol ToDoItemProtocol {
-    mutating func changeTitle(title: String)
-    mutating func changeCategory(category: Category)
-    mutating func changeState()
+    var id: Int { get set }
+    var title: String { get set }
+    var category: Category { get set }
+    var state: Bool { get set }
 }
 
 struct ToDoItem: ToDoItemProtocol, Codable {
+    var id: Int
     var title: String
     var category: Category
     var state: Bool
 }
+
 
 extension ToDoItem {
     mutating func changeTitle(title: String) {

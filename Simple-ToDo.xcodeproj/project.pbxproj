@@ -22,6 +22,11 @@
 		FC073CC92C8ED63200D68740 /* ToDoMakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CC82C8ED63200D68740 /* ToDoMakerView.swift */; };
 		FC073CCB2C8EE35A00D68740 /* ToDoListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CCA2C8EE35A00D68740 /* ToDoListState.swift */; };
 		FC073CCE2C9068FD00D68740 /* KeyDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CCD2C9068FD00D68740 /* KeyDefaults.swift */; };
+		FC12E8402CA80D2B003A37BE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12E83F2CA80D2B003A37BE /* API.swift */; };
+		FC12E8422CA80E4F003A37BE /* ToDoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12E8412CA80E4F003A37BE /* ToDoRequest.swift */; };
+		FC12E8442CA811DF003A37BE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12E8432CA811DF003A37BE /* Error.swift */; };
+		FC12E8462CA811FB003A37BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12E8452CA811FB003A37BE /* NetworkManager.swift */; };
+		FC12E8492CA8180F003A37BE /* ToDoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12E8482CA8180F003A37BE /* ToDoResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +46,12 @@
 		FC073CC82C8ED63200D68740 /* ToDoMakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoMakerView.swift; sourceTree = "<group>"; };
 		FC073CCA2C8EE35A00D68740 /* ToDoListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListState.swift; sourceTree = "<group>"; };
 		FC073CCD2C9068FD00D68740 /* KeyDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDefaults.swift; sourceTree = "<group>"; };
-		FC073CCF2C907A6B00D68740 /* Simple-ToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Simple-ToDo.entitlements"; sourceTree = "<group>"; };
+		FC12E83F2CA80D2B003A37BE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FC12E8412CA80E4F003A37BE /* ToDoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRequest.swift; sourceTree = "<group>"; };
+		FC12E8432CA811DF003A37BE /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		FC12E8452CA811FB003A37BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FC12E8472CA815F8003A37BE /* Simple-ToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Simple-ToDo.entitlements"; sourceTree = "<group>"; };
+		FC12E8482CA8180F003A37BE /* ToDoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +85,12 @@
 		FC073C0E2C85FCA000D68740 /* Simple-ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				FC073CCF2C907A6B00D68740 /* Simple-ToDo.entitlements */,
+				FC12E83D2CA80CFA003A37BE /* Models */,
 				FC073C232C85FFA900D68740 /* App */,
 				FC073CCC2C90676200D68740 /* Structures */,
 				FC073C242C86001000D68740 /* Views */,
 				FC073C272C86003500D68740 /* Resourses */,
+				FC12E8472CA815F8003A37BE /* Simple-ToDo.entitlements */,
 			);
 			path = "Simple-ToDo";
 			sourceTree = "<group>";
@@ -149,6 +160,26 @@
 				FC073CCD2C9068FD00D68740 /* KeyDefaults.swift */,
 			);
 			path = Structures;
+			sourceTree = "<group>";
+		};
+		FC12E83D2CA80CFA003A37BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC12E83E2CA80D07003A37BE /* Network */,
+				FC12E8482CA8180F003A37BE /* ToDoResponse.swift */,
+				FC12E8412CA80E4F003A37BE /* ToDoRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FC12E83E2CA80D07003A37BE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FC12E83F2CA80D2B003A37BE /* API.swift */,
+				FC12E8432CA811DF003A37BE /* Error.swift */,
+				FC12E8452CA811FB003A37BE /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,13 +262,18 @@
 				FC073CC12C8DD08400D68740 /* ToDoList.swift in Sources */,
 				FC073CCB2C8EE35A00D68740 /* ToDoListState.swift in Sources */,
 				FC073CC32C8DD0F600D68740 /* ToDoItem.swift in Sources */,
+				FC12E8462CA811FB003A37BE /* NetworkManager.swift in Sources */,
+				FC12E8422CA80E4F003A37BE /* ToDoRequest.swift in Sources */,
 				FC073C312C861B5600D68740 /* ToDoListViewControllerConfigure.swift in Sources */,
 				FC073CBF2C8DCA3C00D68740 /* ToDoTableViewCell.swift in Sources */,
 				FC073C292C86009700D68740 /* BaseViewController.swift in Sources */,
+				FC12E8492CA8180F003A37BE /* ToDoResponse.swift in Sources */,
 				FC073C102C85FCA000D68740 /* AppDelegate.swift in Sources */,
+				FC12E8402CA80D2B003A37BE /* API.swift in Sources */,
 				FC073CC92C8ED63200D68740 /* ToDoMakerView.swift in Sources */,
 				FC073CCE2C9068FD00D68740 /* KeyDefaults.swift in Sources */,
 				FC073C122C85FCA000D68740 /* SceneDelegate.swift in Sources */,
+				FC12E8442CA811DF003A37BE /* Error.swift in Sources */,
 				FC073CC52C8DD13100D68740 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
